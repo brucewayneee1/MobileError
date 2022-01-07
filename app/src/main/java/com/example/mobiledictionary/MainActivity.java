@@ -1,14 +1,20 @@
 package com.example.mobiledictionary;
 
+import static androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -17,16 +23,19 @@ import com.example.mobiledictionary.English.EngViet;
 import com.example.mobiledictionary.English.EnglishWord;
 import com.example.mobiledictionary.EnglishController.WordController;
 import com.example.mobiledictionary.Highlight.MyWords;
+import com.example.mobiledictionary.Notification.Notification;
+import com.example.mobiledictionary.Notification.Receiver;
 import com.example.mobiledictionary.Vietnamese.VietEng;
 import com.example.mobiledictionary.WordHelper.WordHelper;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    protected int id;
+    protected int id = 1;
     protected EditText search;
     public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
     public WordController wordController = new WordController();
@@ -71,18 +80,21 @@ public class MainActivity extends AppCompatActivity {
 
         //notification
         createNotificationChannel();
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,
-                "lemubitA")
-                .setSmallIcon(R.drawable.icon_star)
-                .setContentTitle(randomHighlightWord.getWord())
-                .setContentText(randomHighlightWord.getMeaning())
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        Intent intent = new Intent(MainActivity.this, Receiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast
+                (MainActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        if (wordController.compareTime(rightNow, 16, 26) == true)
-            notificationManager.notify(100, builder.build());
-//        int hour24 = rightNow.get(Calendar.HOUR_OF_DAY);
-//        Log.d("curH", String.valueOf(hour24));
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime() +
+                        10 * 1000, pendingIntent);
+
+
+    }
+
+    private int getNotificationId() {
+        return (int) new Date().getTime();
     }
 
     //chuyển sang cửa sổ tra từ Anh-Việt
