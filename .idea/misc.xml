@@ -41,10 +41,18 @@
         <entry key="..\:/Users/DELL/Downloads/MobileFinal-main/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/DELL/Downloads/MobileFinal-main/app/src/main/res/layout/activity_main_copy.xml" value="0.16893115942028986" />
         <entry key="..\:/Users/DELL/Downloads/MobileFinal-main/app/src/main/res/layout/layout_dialog_note.xml" value="0.264" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/activity_main2.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/anh_viet.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/layout_dialog_note.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/layout_my_words.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/layout_notification.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/recycle_item.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/huan/OneDrive - vnu.edu.vn/Desktop/Mobile/app/src/main/res/layout/viet_anh.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
